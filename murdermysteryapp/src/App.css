@@ -5,8 +5,10 @@
     align-items: center;
     justify-content: flex-start;
     flex-direction: column;
-    padding-top: 50px;
-    padding-bottom: 100px;
+    padding-top: 30px;
+    padding-bottom: 80px;
+    background-color: black;
+    color: white;
 }
 
 .logos {
@@ -34,9 +36,8 @@
     font-size: 3vw;
     width: 100%;
     text-align: center;
-    color: mediumorchid;
-    background-color: black;
-    padding: 10px 0px;
+    color: rgb(220, 28, 178);
+    background-color: rgb(166, 199, 252);
     margin: 20px 0px;
 }
 
@@ -47,22 +48,22 @@
     align-items: center;
     border: 0;
     width: 150px;
-    height: 8vh;
+    height: 7vh;
     min-height: 50px;
     max-height: 100px;
-    border: 2px solid black;
-    box-shadow: 5px 5px black;
+    box-shadow: 4px 4px gray;
     border-radius: 10px;
     font-size: 20px;
     color: black;
     gap: 10px;
-    transition: 100ms;
+    transition: 20ms;
+    background-color: white;
 }
 .button:active {
     box-shadow: none;
 }
 .info {
-    background-color: turquoise;
+    background-color: aqua;
 }
 .actions {
     background-color: springgreen;
@@ -70,17 +71,18 @@
 
 .button-container {
     display: flex;
-    gap: 30px;
+    gap: 50px;
 }
 
 footer {
     display: flex;
     width: 100vw;
-    text-align: center;
+    height: 30px;
     align-items: center;
     justify-content: center;
     font-size: 14px;
-    margin: 10px 0px;
+    border-bottom: 2px solid black;
+    border-top: 2px solid black;
 }
 
 .card {
@@ -91,27 +93,29 @@ footer {
     text-align: center;
     font-size: x-large;
     width: 300px;
-    height: 300px;
-    border: 2px solid black;
-    box-shadow: 5px 5px black;
+    min-height: 300px;
+    height: max-content;
+    box-shadow: 5px 5px rgb(58, 231, 190);
     transition: 100ms;
     background-color: white;
-}
-.card:hover {
     border-radius: 20px;
 }
+.card:hover {
+    border-radius: 0px;
+}
 .card.one {
-    background-color: hotpink;
+    background-color: rgb(250, 0, 240);
 }
 .card.two {
-    background-color: mediumslateblue;
+    background-color: rgb(189, 36, 255);
 }
 .card.three {
-    background-color: hotpink;
+    background-color: yellow;
 }
 .card > button {
-    width: 100px;
+    width: 60px;
     height: 50px;
+    box-shadow: 5px 5px black;
 }
 
 .card-container {
@@ -120,8 +124,9 @@ footer {
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-evenly;
-    margin: 50px 0px;
+    padding: 50px 0px;
     gap: 30px;
+    background-color: black;
 }
 
 .field {
@@ -129,7 +134,7 @@ footer {
     width: 200px;
     height: 30px;
     font-size: 20px;
-    background-color: hotpink;
+    background-color: rgb(0, 0, 0, 0);
     border: 0;
     border-radius: 0;
     border-bottom: 2px;
@@ -161,4 +166,23 @@ footer {
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
     -webkit-appearance: none;
+}
+
+.result-container {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+    padding: 0px 20px;
+    height: 200px;
+    width: 200px;
+    border-radius: 20px;
+    background-color: white;
+    margin: 30px 0px;
+    font-size: 16px;
+    font-family: monospace;
+    text-align: left;
+}
+.result-container > h3 {
+    margin: 0;
 }
