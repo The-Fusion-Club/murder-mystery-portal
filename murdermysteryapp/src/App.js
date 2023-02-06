@@ -8,6 +8,8 @@ const App = () => {
       <Routes>
         <Route path='/' element={<Home />}/>
         <Route path='/actions' element={<Actions />}/>
+        <Route path='/info' element={<> RULES PAGE COMING SOON </>}/>
+        <Route path='/*' element={<>404 NOT FOUND</>}/>
       </Routes>
     </>
   );

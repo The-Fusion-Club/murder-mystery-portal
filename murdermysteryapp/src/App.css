@@ -93,9 +93,10 @@ footer {
     text-align: center;
     font-size: x-large;
     width: 300px;
-    min-height: 300px;
+    min-height: 350px;
     height: max-content;
-    box-shadow: 5px 5px rgb(58, 231, 190);
+    border: 2px solid black;
+    box-shadow: 5px 5px black;
     transition: 100ms;
     background-color: white;
     border-radius: 20px;
@@ -104,12 +105,18 @@ footer {
     border-radius: 0px;
 }
 .card.one {
-    background-color: rgb(250, 0, 240);
+    background-color: rgb(254, 56, 248);
 }
 .card.two {
-    background-color: rgb(189, 36, 255);
+    background-color: rgb(209, 102, 255);
 }
 .card.three {
+    background-color: chartreuse;
+}
+.card.four {
+    background-color: rgb(255, 43, 43);
+}
+.card.five {
     background-color: yellow;
 }
 .card > button {
@@ -122,11 +129,12 @@ footer {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    height: max-content;
     align-items: center;
     justify-content: space-evenly;
-    padding: 50px 0px;
+    margin: 20px;
     gap: 30px;
-    background-color: black;
+    background-color: white;
 }
 
 .field {
@@ -148,19 +156,24 @@ footer {
     outline: none;
 }
 
-.error-message {
+.message {
     display: none;
     justify-content: center;
     align-items: center;
     gap: 5px;
-    color: rgb(237, 45, 45);
     background-color: white;
     padding: 5px;
     border-radius: 20px;
-    font-size: 14px;
+    font-size: 12px;
     height: 20px;
     width: 100px;
     margin-top: 20px;
+}
+.error.message {
+    color: rgb(237, 45, 45);
+}
+.success.message {
+    color: green;
 }
 
 input::-webkit-outer-spin-button,
