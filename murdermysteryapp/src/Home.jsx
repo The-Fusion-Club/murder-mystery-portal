@@ -16,6 +16,10 @@ const Home = () => {
         navigate('/actions')
     }
 
+    const handleRulesClick = () => {
+        navigate('/rules')
+    }
+
     return(
         <>
             <header className='header'>
@@ -26,6 +30,10 @@ const Home = () => {
                 <span className='copy-medium'>presents</span>
                 <div className='event-title'><h1>How I Met Your Murderer!</h1></div>
                 <section className='button-container'>
+                    <button className='rules button' onClick={handleRulesClick}>
+                        Rules
+                        <img style={{maxWidth: '20px', borderRadius: '100%'}} src="https://e7.pngegg.com/pngimages/70/745/png-clipart-black-logo-computer-icons-information-symbol-information-miscellaneous-text-thumbnail.png" alt="arrow icon" />
+                    </button>
                     <button className='info button' onClick={handleInfoClick}>
                         Info
                         <img style={{maxWidth: '20px', borderRadius: '100%'}} src="https://e7.pngegg.com/pngimages/70/745/png-clipart-black-logo-computer-icons-information-symbol-information-miscellaneous-text-thumbnail.png" alt="arrow icon" />
