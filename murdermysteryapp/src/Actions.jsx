@@ -37,9 +37,9 @@ const Actions = () => {
             document.getElementById('results').style.display = 'flex'
             try {
                 const checkin = new Date(timestamps.checkin).toTimeString().substring(0, 18)
+                document.getElementById('checkin-stamp').textContent = checkin
                 const checkout = new Date(timestamps.checkout).toTimeString().substring(0, 18)
                 const time = (new Date(timestamps.checkout).getTime() - new Date(timestamps.checkin).getTime())/1000
-                document.getElementById('checkin-stamp').textContent = checkin
                 document.getElementById('checkout-stamp').textContent = checkout
                 document.getElementById('total-time').textContent = time + ' seconds'
             }
@@ -52,12 +52,14 @@ const Actions = () => {
     const handleCheckin = async () => {
         const seqno = document.getElementById('checkin-seqno-field').value
         const pin = document.getElementById('checkin-pin-field').value
+        const uuid = document.getElementById('checkin-uuid-field').value
         const resp = await fetch(process.env.REACT_APP_SERVER_URL + '/checkin', {
             method:     'post',
             headers:    { 'Content-Type': 'application/json'},
             body:       JSON.stringify({ 
                 seqno: seqno, 
-                pin: pin, 
+                pin: pin,
+                uuid: uuid, 
                 key: process.env.REACT_APP_FRONTEND_VERIFICATION_KEY 
             })
         })
@@ -76,12 +78,14 @@ const Actions = () => {
     const handleCheckout = async () => {
         const seqno = document.getElementById('checkout-seqno-field').value
         const pin = document.getElementById('checkout-pin-field').value
+        const uuid = document.getElementById('checkout-uuid-field').value
         const resp = await fetch(process.env.REACT_APP_SERVER_URL + '/checkout', {
             method:     'post',
             headers:    { 'Content-Type': 'application/json'},
             body:       JSON.stringify({ 
                 seqno: seqno, 
-                pin: pin, 
+                pin: pin,
+                uuid: uuid, 
                 key: process.env.REACT_APP_FRONTEND_VERIFICATION_KEY 
             })
         })
@@ -130,6 +134,7 @@ const Actions = () => {
                 <section className='card three'>
                     <h1>Checkin</h1>
                     <input id='checkin-seqno-field' className='seqno field' type="tel" maxLength="3" placeholder='sequence #'/>
+                    <input id='checkin-uuid-field' className='uuid field' type="text" maxLength="4" placeholder='4 digits of uuid'/>
                     <input id='checkin-pin-field' className='pin field' type="password" maxLength="6" placeholder='admin pin'/>
                     <button className='action button' onClick={handleCheckin}>
                         <img style={{ maxWidth: '30px'}} src="https://cdn-icons-png.flaticon.com/512/1549/1549612.png" alt="" />
@@ -146,6 +151,7 @@ const Actions = () => {
                 <section className='card four'>
                     <h1>Checkout</h1>
                     <input id='checkout-seqno-field' className='seqno field' type="tel" maxLength="3" placeholder='sequence #'/>
+                    <input id='checkout-uuid-field' className='uuid field' type="text" maxLength="4" placeholder='4 digits of uuid'/>
                     <input id='checkout-pin-field' className='pin field' type="password" maxLength="6" placeholder='admin pin'/>
                     <button className='action button' onClick={handleCheckout}>
                         <img style={{ maxWidth: '30px'}} src="https://cdn-icons-png.flaticon.com/512/1549/1549612.png" alt="" />
@@ -158,9 +164,6 @@ const Actions = () => {
                         <img style={{ maxWidth: '20px'}} src="https://cdn0.iconfinder.com/data/icons/shift-interfaces/32/Error-512.png" alt="" />
                         try again
                     </span>
-                </section>
-                <section className='card five'>
-                    LEADERBOARD
                 </section>
             </section>
             <footer>
