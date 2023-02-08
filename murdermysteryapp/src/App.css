@@ -382,3 +382,30 @@ input::-webkit-inner-spin-button {
     align-items: flex-start;
     flex-direction: row;
 }
+
+.modal.layer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background-color: rgba(222, 255, 189, 0.629);
+}
+.modal.box {
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    height: 400px;
+    width: 90vw;
+    max-width: 500px;
+    border-radius: 40px;
+    color: white;
+    font-family: monospace;
+    box-sizing: border-box;
+    padding: 25px;
+    font-size: medium;
+}
