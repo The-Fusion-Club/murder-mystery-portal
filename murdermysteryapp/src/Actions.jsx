@@ -51,7 +51,7 @@ const Actions = () => {
 
     const handleCheckin = async () => {
         const seqno = document.getElementById('checkin-seqno-field').value
-        const pin = document.getElementById('checkin-pin-field').value
+        const pin = document.getElementById('checkin-pin-field').value? document.getElementById('checkin-pin-field').value: localStorage.getItem('pin')
         const uuid = document.getElementById('checkin-uuid-field').value
         const resp = await fetch(process.env.REACT_APP_SERVER_URL + '/checkin', {
             method:     'post',
@@ -68,6 +68,7 @@ const Actions = () => {
         if(resp === 200) {
             document.getElementById('checkin-error').style.display = 'none'
             document.getElementById('checkin-success').style.display = 'flex'
+            localStorage.setItem('pin', pin)
         }
         else {
             document.getElementById('checkin-success').style.display = 'none'
@@ -77,7 +78,7 @@ const Actions = () => {
 
     const handleCheckout = async () => {
         const seqno = document.getElementById('checkout-seqno-field').value
-        const pin = document.getElementById('checkout-pin-field').value
+        const pin = document.getElementById('checkout-pin-field').value? document.getElementById('checkout-pin-field').value: localStorage.getItem('pin')
         const uuid = document.getElementById('checkout-uuid-field').value
         const resp = await fetch(process.env.REACT_APP_SERVER_URL + '/checkout', {
             method:     'post',
@@ -94,6 +95,7 @@ const Actions = () => {
         if(resp === 200) {
             document.getElementById('checkout-error').style.display = 'none'
             document.getElementById('checkout-success').style.display = 'flex'
+            localStorage.setItem('pin', pin)
         }
         else {
             document.getElementById('checkout-success').style.display = 'none'
