@@ -4,6 +4,7 @@ import Actions from './Actions'
 import Info from './Info';
 import Rules from './Rules'
 import { Routes, Route } from 'react-router-dom'
+import Results from './Results.jsx';
 const App = () => {
   return (
     <>
@@ -12,6 +13,7 @@ const App = () => {
         <Route path='/actions' element={<Actions />}/>
         <Route path='/info' element={<Info />}/>
         <Route path='/rules' element={<Rules />}/>
+        <Route path='/results' element={<Results />}/>
         <Route path='/*' element={<div className='not-found'>404 NOT FOUND</div>}/>
       </Routes>
     </>

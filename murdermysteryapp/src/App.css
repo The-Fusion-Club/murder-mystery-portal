@@ -327,3 +327,58 @@ input::-webkit-inner-spin-button {
     font-family: 'Graduate', monospace;
     font-size: xx-large;
 }
+
+.results.page {
+    display: flex;
+    flex-direction: column;
+    height: max-content;
+    min-height: 600px;
+    width: 100vw;
+    background-color: black;
+    color: aliceblue;
+    font-family: monospace;
+}
+.results.page > h1 {
+    margin: 0;
+}
+.results.title {
+    font-family: 'Silkscreen', 'Courier New', Courier;
+    font-size: 40px;
+    text-align: center;
+    border-bottom: 2px solid hotpink;
+    padding: 20px 0px;
+    color: rgb(171, 132, 251);
+}
+.results.headings {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 90%;
+    align-self: center;
+    box-sizing: border-box;
+    border-bottom: 3px dashed white;
+    margin: 0px 20px;
+    padding: 10px 20px;
+    font-size: 20px;
+    color: goldenrod;
+}
+.results.teamname {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 90%;
+    align-self: center;
+    box-sizing: border-box;
+    margin: 0px 20px;
+    padding: 10px 20px;
+    font-size: 30px;
+    color: white;
+    text-align: center;
+    font-family: 'Graduate';
+}
+#winner-one, #winner-two {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: row;
+}

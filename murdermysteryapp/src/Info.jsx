@@ -37,6 +37,8 @@ const Info = () => {
                         data?.map((item, index) => {
                             if(item)
                                 return(<div key={index} className='rank entry'><h6 className="rank team">{item.team}</h6><h6 className="rank time">{item.time} sec</h6></div>)
+                            else
+                                return(<></>)
                         })
                     }
                 </section>
@@ -46,11 +48,11 @@ const Info = () => {
                 </section>
                 <section className="card seven">
                     <h1>Final Results</h1>
-                    {/* <a href="/">
+                    <a href="/results">
                         <button className='action button'>
                             <img style={{ maxWidth: '30px'}} src="https://cdn-icons-png.flaticon.com/512/1549/1549612.png" alt="" />
                         </button>
-                    </a> */}
+                    </a>
                 </section>
             </section>
             <footer>
