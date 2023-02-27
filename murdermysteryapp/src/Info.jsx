@@ -41,6 +41,11 @@ const Info = () => {
                                 return(<></>)
                         })
                     }
+                    <a href="/leaderboard">
+                        <button className='action button'>
+                            <img style={{ maxWidth: '30px'}} src="https://cdn-icons-png.flaticon.com/512/1549/1549612.png" alt="" />
+                        </button>
+                    </a>
                 </section>
                 <section className="card six">
                     <h1>Announcements</h1>
